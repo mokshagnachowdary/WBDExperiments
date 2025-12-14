@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Greeting Page – Mokshagna</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body{font-family:Arial;padding:20px;background:#f7f7f7;}
+  #box{
+      margin-top:15px;
+      padding:15px;
+      background:white;
+      border-radius:10px;
+      box-shadow:0 0 10px rgba(0,0,0,0.1);
+  }
+</style>
+</head>
+<body>
+
+<h2>Greeting Page</h2>
+
+<label>Your Name:</label>
+<input id="name" type="text" placeholder="Enter name">
+
+<label>Your Mood:</label>
+<select id="mood">
+  <option>Happy</option>
+  <option>Tired</option>
+  <option>Stressed</option>
+</select>
+
+<button onclick="showGreeting()">Show Greeting</button>
+
+<div id="box"></div>
+
+<script>
+function showGreeting(){
+    let name = document.getElementById("name").value || "Mokshagna";
+    let mood = document.getElementById("mood").value;
+
+    let message = "Hi " + name + ", you seem " + mood.toLowerCase() + " today.";
+
+    document.getElementById("box").innerHTML = message;
+}
+</script>
+
+</body>
+</html>

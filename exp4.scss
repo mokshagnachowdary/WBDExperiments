@@ -1,0 +1,48 @@
+// SCSS VARIABLES
+$primary-color: #2563eb;
+$radius: 10px;
+$font-main: Arial, sans-serif;
+
+// MIXIN
+@mixin card-style {
+  padding: 15px;
+  border-radius: $radius;
+  margin-bottom: 15px;
+}
+
+// CSS CUSTOM PROPERTIES FOR THEMES
+body.light {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --card-bg: #f3f4f6;
+}
+
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #f9fafb;
+  --card-bg: #2a2a2a;
+}
+
+// NESTING
+body {
+  margin: 0;
+  font-family: $font-main;
+  background: var(--bg-color);
+  color: var(--text-color);
+
+  header, footer {
+    background: $primary-color;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+
+  main {
+    padding: 20px;
+
+    .card {
+      @include card-style;
+      background: var(--card-bg);
+    }
+  }
+}

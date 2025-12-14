@@ -1,0 +1,39 @@
+// VARIABLES
+$radius: 10px;
+$bg-card: #f3f4f6;
+$font-main: Arial;
+
+// MIXIN
+@mixin product-box {
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: $radius;
+  background: $bg-card;
+}
+
+// THEME VARIABLES
+body.light {
+  --bg: #ffffff;
+  --text: #111;
+}
+
+body.dark {
+  --bg: #1e1e1e;
+  --text: #f1f1f1;
+}
+
+// NESTING
+body {
+  font-family: $font-main;
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
+
+  .product {
+    @include product-box;
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+}
